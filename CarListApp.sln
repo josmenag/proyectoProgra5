@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarListApp.Maui", "CarListApp.Maui\CarListApp.Maui.csproj", "{07A604E1-ECAB-4502-A0F8-DB6CAE8F13D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarListApp.Api", "CarListApp.Api\CarListApp.Api.csproj", "{8CC15C63-83F0-4105-9C26-0EC50F1E30B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{07A604E1-ECAB-4502-A0F8-DB6CAE8F13D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07A604E1-ECAB-4502-A0F8-DB6CAE8F13D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{07A604E1-ECAB-4502-A0F8-DB6CAE8F13D2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{8CC15C63-83F0-4105-9C26-0EC50F1E30B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CC15C63-83F0-4105-9C26-0EC50F1E30B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CC15C63-83F0-4105-9C26-0EC50F1E30B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CC15C63-83F0-4105-9C26-0EC50F1E30B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

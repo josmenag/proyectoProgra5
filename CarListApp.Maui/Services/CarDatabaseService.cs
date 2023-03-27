@@ -1,17 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using CarListApp.Maui.Models;
+﻿using CarListApp.Maui.Models;
 using SQLite;
 
 namespace CarListApp.Maui.Services
 {
-    public class CarService
+    public class CarDatabaseService
     {
         SQLiteConnection conn;
         string _dbPath;
         public string StatusMessage;
         int result = 0;
-        public CarService(string dbPath)
+        public CarDatabaseService(string dbPath)
         {
             _dbPath = dbPath;
         }
