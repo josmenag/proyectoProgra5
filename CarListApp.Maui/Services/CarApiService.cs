@@ -25,10 +25,10 @@ namespace CarListApp.Maui.Services
         private string GetBaseAdress()
         {
 #if DEBUG
-            return DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:8099" : "http://localhost:8099";
+            return DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:7164" : "http://localhost:7164";
 #elif RELEASE
                 // published address here
-                return "https://carlistappapi20221121135717.azurewebsites.net";
+                return "https://p5cars-api.azurewebsites.net";
 #endif
         }
 

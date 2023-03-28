@@ -3,3 +3,13 @@
 2023-03-27 16:58:18.344 -06:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-03-27 16:58:18.345 -06:00 [INF] Hosting environment: Development
 2023-03-27 16:58:18.345 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-03-27 18:30:58.550 -06:00 [INF] Now listening on: https://localhost:7164
+2023-03-27 18:30:58.582 -06:00 [INF] Now listening on: http://localhost:5081
+2023-03-27 18:30:58.584 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-27 18:30:58.584 -06:00 [INF] Hosting environment: Development
+2023-03-27 18:30:58.585 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-03-27 21:00:52.559 -06:00 [INF] Now listening on: https://localhost:7164
+2023-03-27 21:00:52.591 -06:00 [INF] Now listening on: http://localhost:5081
+2023-03-27 21:00:52.592 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-03-27 21:00:52.592 -06:00 [INF] Hosting environment: Development
+2023-03-27 21:00:52.592 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
