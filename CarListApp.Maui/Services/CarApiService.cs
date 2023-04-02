@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http.Json;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using System.Text.Json;
 
 namespace CarListApp.Maui.Services
 {
@@ -24,12 +24,7 @@ namespace CarListApp.Maui.Services
 
         private string GetBaseAdress()
         {
-#if DEBUG
-            return DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:7164" : "http://localhost:7164";
-#elif RELEASE
-                // published address here
                 return "https://p5cars-api.azurewebsites.net";
-#endif
         }
 
         public async Task<List<Car>> GetCars()
@@ -37,8 +32,12 @@ namespace CarListApp.Maui.Services
             try
             {
                 await SetAuthToken();
-                var response = await _httpClient.GetStringAsync("/cars");
-                return JsonSerializer.Deserialize<List<Car>>(response);
+                var response = await _httpClient.GetAsync("/cars");
+                var contentStream = await response.Content.ReadAsStreamAsync();
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var cars = await JsonSerializer.DeserializeAsync<List<Car>>(contentStream, options);
+                return cars;
+
             }
             catch (Exception ex)
             {
@@ -48,12 +47,13 @@ namespace CarListApp.Maui.Services
             return null;
         }
 
+
         public async Task<Car> GetCar(int id)
         {
             try
             {
                 var response = await _httpClient.GetStringAsync("/cars/" + id);
-                return JsonSerializer.Deserialize<Car>(response);
+                var car = JsonSerializer.Deserialize<Car>(response);
             }
             catch (Exception ex)
             {
@@ -114,11 +114,20 @@ namespace CarListApp.Maui.Services
                 response.EnsureSuccessStatusCode();
                 StatusMessage = "Login Successful";
 
-                return JsonSerializer.Deserialize<AuthResponseModel>(await response.Content.ReadAsStringAsync());
+                var json = await response.Content.ReadAsStringAsync();
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
+
+                var authResponse = JsonSerializer.Deserialize<AuthResponseModel>(json, options);
+
+
+                return authResponse;
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to login successfully.";
+                StatusMessage = "Failed to log in.";
                 return new AuthResponseModel();
             }
         }
@@ -130,3 +139,9 @@ namespace CarListApp.Maui.Services
         }
     }
 }
+
+
+
+
+
+

@@ -57,6 +57,7 @@
 	  <None Remove="ViewModels\" />
 	  <None Remove="Views\" />
 	  <None Remove="Controls\" />
+	  <None Remove="Resources\Images\pexels-photo-305070.jpeg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
@@ -71,5 +72,8 @@
 	  <PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.4" />
 	  <PackageReference Include="EntityFramework" Version="6.4.4" />
 	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.27.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\car_login_page_photo.jpeg" />
 	</ItemGroup>
 </Project>

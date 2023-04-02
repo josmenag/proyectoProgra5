@@ -1,5 +1,4 @@
-﻿
-using CarListApp.Maui.ViewModels;
+﻿using CarListApp.Maui.ViewModels;
 
 namespace CarListApp.Maui;
 

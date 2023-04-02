@@ -1,5 +1,4 @@
-﻿
-namespace CarListApp.Maui.Controls;
+﻿namespace CarListApp.Maui.Controls;
 
 public partial class FlyOutHeader : StackLayout
 {
@@ -17,4 +16,4 @@ public partial class FlyOutHeader : StackLayout
             lblRole.Text = App.UserInfo.Role;
         }
     }
-}
+}   
