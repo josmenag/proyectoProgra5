@@ -41,7 +41,7 @@ namespace CarListApp.Maui.Services
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to retrieve data.";
+                StatusMessage = "Failed to retrieve cars list";
             }
 
             return null;
@@ -57,7 +57,7 @@ namespace CarListApp.Maui.Services
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to retrieve data.";
+                StatusMessage = "Failed to retrieve car data.";
             }
 
             return null;
@@ -73,7 +73,7 @@ namespace CarListApp.Maui.Services
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to add data.";
+                StatusMessage = "Failed to add car data.";
             }
         }
 
@@ -88,7 +88,7 @@ namespace CarListApp.Maui.Services
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to delete data.";
+                StatusMessage = "Failed to delete car data.";
             }
         }
 
@@ -98,11 +98,11 @@ namespace CarListApp.Maui.Services
             {
                 var response = await _httpClient.PutAsJsonAsync("/cars/" + id, car);
                 response.EnsureSuccessStatusCode();
-                StatusMessage = "Update Successful";
+                StatusMessage = "Car data successfully updated";
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to update data.";
+                StatusMessage = "Failed to update car data.";
             }
         }
 
@@ -112,7 +112,7 @@ namespace CarListApp.Maui.Services
             {
                 var response = await _httpClient.PostAsJsonAsync("/login", loginModel);
                 response.EnsureSuccessStatusCode();
-                StatusMessage = "Login Successful";
+                StatusMessage = "Login successful";
 
                 var json = await response.Content.ReadAsStringAsync();
                 var options = new JsonSerializerOptions

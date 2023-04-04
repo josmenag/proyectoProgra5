@@ -28,8 +28,8 @@ namespace CarListApp.Maui.Helpers
                     {
                         new ShellContent
                         {
-                            Icon = "dotnet_bot.svg",
-                            Title = "Admin Page 1",
+                            //Icon = "dotnet_bot.svg",
+                            Title = "Admin Menu",
                             ContentTemplate = new DataTemplate(typeof(MainPage))
                         },
                     }
@@ -52,8 +52,8 @@ namespace CarListApp.Maui.Helpers
                     {
                         new ShellContent
                         {
-                            Icon = "dotnet_bot.svg",
-                            Title = "User Page 1",
+                            //Icon = "dotnet_bot.svg",
+                            Title = "User Page",
                             ContentTemplate = new DataTemplate(typeof(MainPage))
                         },
                     }
@@ -74,7 +74,7 @@ namespace CarListApp.Maui.Helpers
                 {
                     new ShellContent
                     {
-                        Icon = "dotnet_bot.svg",
+                        //Icon = "dotnet_bot.svg",
                         Title = "Logout",
                         ContentTemplate = new DataTemplate(typeof(LogoutPage))
                     }

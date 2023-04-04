@@ -58,6 +58,8 @@
 	  <None Remove="Views\" />
 	  <None Remove="Controls\" />
 	  <None Remove="Resources\Images\pexels-photo-305070.jpeg" />
+	  <None Remove="Resources\Images\delete_remove_recycle_bin_trash_icon_153711.png" />
+	  <None Remove="Resources\Images\delete_icon_trash.svg" />
 	</ItemGroup>
 	<ItemGroup>
 	  <Folder Include="Services\" />
@@ -75,5 +77,6 @@
 	</ItemGroup>
 	<ItemGroup>
 	  <BundleResource Include="Resources\Images\car_login_page_photo.jpeg" />
+	  <BundleResource Include="Resources\Images\delete_icon_trash.svg" />
 	</ItemGroup>
 </Project>

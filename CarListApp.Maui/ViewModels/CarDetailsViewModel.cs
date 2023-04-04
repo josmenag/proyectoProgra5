@@ -34,6 +34,7 @@ namespace CarListApp.Maui.ViewModels
             Id = Convert.ToInt32(HttpUtility.UrlDecode(query["Id"].ToString()));
         }
 
+        /*
         public async Task GetCarData()
         {
             if (accessType == NetworkAccess.Internet)
@@ -44,6 +45,12 @@ namespace CarListApp.Maui.ViewModels
             {
                 Car = App.CarDatabaseService.GetCar(Id);
             }
+        }
+        */
+
+        public async Task GetCarData()
+        {         
+                Car = await carApiService.GetCar(Id);           
         }
     }
 }

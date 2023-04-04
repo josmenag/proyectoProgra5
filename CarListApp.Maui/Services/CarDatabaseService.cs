@@ -82,7 +82,7 @@ namespace CarListApp.Maui.Services
             }
             catch (Exception ex)
             {
-                StatusMessage = "Failed to Insert data.";
+                StatusMessage = "Failed to insert car data.";
             }
         }
 
