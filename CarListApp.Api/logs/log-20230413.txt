@@ -1,0 +1,12 @@
+2023-04-13 16:41:47.882 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-13 16:41:47.917 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-13 16:41:47.918 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-13 16:41:47.918 -06:00 [INF] Hosting environment: Development
+2023-04-13 16:41:47.918 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-13 16:42:13.149 -06:00 [INF] HTTP GET /api/cars responded 200 in 1258.9058 ms
+2023-04-13 17:44:23.099 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-13 17:44:23.150 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-13 17:44:23.152 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-13 17:44:23.152 -06:00 [INF] Hosting environment: Development
+2023-04-13 17:44:23.152 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-13 17:44:38.358 -06:00 [INF] HTTP GET /api/cars responded 200 in 1271.5045 ms

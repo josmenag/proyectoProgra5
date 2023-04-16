@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Serilog;
-using Microsoft.Data.Sqlite;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
@@ -15,8 +14,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 
-var connectionString = new SqliteConnection($"Data Source=carsInventory.db");
-builder.Services.AddDbContext<CarListApp.Api.Data.CarsInventoryDBContext>(o => o.UseSqlite(connectionString));
+var connectionString = builder.Configuration.GetConnectionString("HotelListingDbConnectionString");
+builder.Services.AddDbContext<CarsInventoryDBContext>(options => {
+    options.UseSqlServer(connectionString);
+});
 
 builder.Services.AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
@@ -65,6 +66,7 @@ var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
+    //Swagger usage removed out of this IF, so that I can use Swagger with Azure deployment
 {}
 
 app.UseSwagger();
