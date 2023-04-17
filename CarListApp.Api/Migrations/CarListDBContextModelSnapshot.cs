@@ -2,182 +2,21 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace CarListApp.Api.Migrations
 {
-    [DbContext(typeof(CarListDbContext))]
-    [Migration("20230327195801_firstMigration")]
-    partial class firstMigration
+    [DbContext(typeof(CarListDBContext))]
+    partial class CarListDBContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
+            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
 
-            modelBuilder.Entity("Car", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Make")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Model")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Vin")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cars");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Make = "Honda",
-                            Model = "Fit",
-                            Vin = "ABC"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Make = "Honda",
-                            Model = "Civic",
-                            Vin = "ABC2"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Make = "Honda",
-                            Model = "Stream",
-                            Vin = "ABC1"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Make = "Nissan",
-                            Model = "Note",
-                            Vin = "ABC4"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Make = "Nissan",
-                            Model = "Atlas",
-                            Vin = "ABC5"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Make = "Nissan",
-                            Model = "Dualis",
-                            Vin = "ABC6"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Make = "Nissan",
-                            Model = "Murano",
-                            Vin = "ABC7"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Make = "Audi",
-                            Model = "A5",
-                            Vin = "ABC8"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Make = "BMW",
-                            Model = "M3",
-                            Vin = "ABC9"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Make = "Jaguar",
-                            Model = "F-Pace",
-                            Vin = "ABC10"
-                        });
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ConcurrencyStamp")
-                        .IsConcurrencyToken()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("NormalizedName")
-                        .IsUnique()
-                        .HasDatabaseName("RoleNameIndex");
-
-                    b.ToTable("AspNetRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "d1b5952a-2162-46c7-b29e-1a2a68922c14",
-                            Name = "Administrator",
-                            NormalizedName = "ADMINISTRATOR"
-                        },
-                        new
-                        {
-                            Id = "42358d3e-3c22-45e1-be81-6caa7ba865ef",
-                            Name = "User",
-                            NormalizedName = "USER"
-                        });
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("ClaimType")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("ClaimValue")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("RoleId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetRoleClaims", (string)null);
-                });
-
-            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+            modelBuilder.Entity("CarListApp.Api.Data.ApiUser", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("TEXT");
@@ -195,6 +34,14 @@ namespace CarListApp.Api.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("INTEGER");
@@ -239,40 +86,166 @@ namespace CarListApp.Api.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
+                });
+
+            modelBuilder.Entity("CarListApp.Api.Data.Car", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("DealershipId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Make")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Plate")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("Year")
+                        .HasMaxLength(50)
+                        .HasColumnType("REAL");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DealershipId");
+
+                    b.ToTable("Cars");
 
                     b.HasData(
                         new
                         {
-                            Id = "408aa945-3d84-4421-8342-7269ec64d949",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "76447704-3502-42c9-9e25-2685646533e8",
-                            Email = "admin@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
-                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAENyZjPMoWaZJSUhZeEhM5dIECFgt5FKvHK8SDDGoX8pZ607whrKjuHlXOGhCbT/QVQ==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cab30584-2881-42ea-8e42-3a493f35e494",
-                            TwoFactorEnabled = false,
-                            UserName = "admin@localhost.com"
+                            Id = 1,
+                            DealershipId = 1,
+                            Make = "My Make",
+                            Plate = "PL4T3",
+                            Year = 2023.0
                         },
                         new
                         {
-                            Id = "3f4631bd-f907-4409-b416-ba356312e659",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "2e9f782d-d79d-4137-ad9f-9025be97a5c8",
-                            Email = "user@localhost.com",
-                            EmailConfirmed = true,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "USER@LOCALHOST.COM",
-                            NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFBDk5+qKN3eldsX60H/EQTIe/RopVf2K67IopcxBtjar0sueVxbtYbDii6zA2Y5MA==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "d7936285-0ec2-4b5a-9a4b-a8bf06e2061a",
-                            TwoFactorEnabled = false,
-                            UserName = "user@localhost.com"
+                            Id = 2,
+                            DealershipId = 1,
+                            Make = "MC Laren",
+                            Plate = "F45T",
+                            Year = 2015.0
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DealershipId = 2,
+                            Make = "Bently",
+                            Plate = "B4D13",
+                            Year = 2020.0
                         });
+                });
+
+            modelBuilder.Entity("CarListApp.Api.Data.Dealership", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Dealerships");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Address = "San Jose",
+                            Name = "SJO"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Address = "Tres Rios",
+                            Name = "Cartago"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Address = "La Fortuna",
+                            Name = "Alajuela"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex");
+
+                    b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "e8983e12-1b32-430d-8141-db29434b4b22",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "c6b5be7c-a569-4316-8c57-5f7f4e30ef25",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        });
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
@@ -333,18 +306,6 @@ namespace CarListApp.Api.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = "408aa945-3d84-4421-8342-7269ec64d949",
-                            RoleId = "d1b5952a-2162-46c7-b29e-1a2a68922c14"
-                        },
-                        new
-                        {
-                            UserId = "3f4631bd-f907-4409-b416-ba356312e659",
-                            RoleId = "42358d3e-3c22-45e1-be81-6caa7ba865ef"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -366,6 +327,17 @@ namespace CarListApp.Api.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("CarListApp.Api.Data.Car", b =>
+                {
+                    b.HasOne("CarListApp.Api.Data.Dealership", "Dealership")
+                        .WithMany("Cars")
+                        .HasForeignKey("DealershipId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Dealership");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -377,7 +349,7 @@ namespace CarListApp.Api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("CarListApp.Api.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -386,7 +358,7 @@ namespace CarListApp.Api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("CarListApp.Api.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -401,7 +373,7 @@ namespace CarListApp.Api.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("CarListApp.Api.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -410,11 +382,16 @@ namespace CarListApp.Api.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                    b.HasOne("CarListApp.Api.Data.ApiUser", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("CarListApp.Api.Data.Dealership", b =>
+                {
+                    b.Navigation("Cars");
                 });
 #pragma warning restore 612, 618
         }

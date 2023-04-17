@@ -32,6 +32,8 @@ namespace CarListApp.Api.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
+                    FirstName = table.Column<string>(type: "TEXT", nullable: false),
+                    LastName = table.Column<string>(type: "TEXT", nullable: false),
                     UserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "TEXT", maxLength: 256, nullable: true),
@@ -53,18 +55,17 @@ namespace CarListApp.Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Cars",
+                name: "Dealerships",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Make = table.Column<string>(type: "TEXT", nullable: false),
-                    Model = table.Column<string>(type: "TEXT", nullable: false),
-                    Vin = table.Column<string>(type: "TEXT", nullable: false)
+                    Name = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Address = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Cars", x => x.Id);
+                    table.PrimaryKey("PK_Dealerships", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -173,48 +174,55 @@ namespace CarListApp.Api.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Cars",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Make = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Plate = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Year = table.Column<double>(type: "REAL", maxLength: 50, nullable: false),
+                    DealershipId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cars", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Cars_Dealerships_DealershipId",
+                        column: x => x.DealershipId,
+                        principalTable: "Dealerships",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.InsertData(
                 table: "AspNetRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "42358d3e-3c22-45e1-be81-6caa7ba865ef", null, "User", "USER" },
-                    { "d1b5952a-2162-46c7-b29e-1a2a68922c14", null, "Administrator", "ADMINISTRATOR" }
+                    { "c6b5be7c-a569-4316-8c57-5f7f4e30ef25", null, "User", "USER" },
+                    { "e8983e12-1b32-430d-8141-db29434b4b22", null, "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(
-                table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
+                table: "Dealerships",
+                columns: new[] { "Id", "Address", "Name" },
                 values: new object[,]
                 {
-                    { "3f4631bd-f907-4409-b416-ba356312e659", 0, "2e9f782d-d79d-4137-ad9f-9025be97a5c8", "user@localhost.com", true, false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAIAAYagAAAAEFBDk5+qKN3eldsX60H/EQTIe/RopVf2K67IopcxBtjar0sueVxbtYbDii6zA2Y5MA==", null, false, "d7936285-0ec2-4b5a-9a4b-a8bf06e2061a", false, "user@localhost.com" },
-                    { "408aa945-3d84-4421-8342-7269ec64d949", 0, "76447704-3502-42c9-9e25-2685646533e8", "admin@localhost.com", true, false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAIAAYagAAAAENyZjPMoWaZJSUhZeEhM5dIECFgt5FKvHK8SDDGoX8pZ607whrKjuHlXOGhCbT/QVQ==", null, false, "cab30584-2881-42ea-8e42-3a493f35e494", false, "admin@localhost.com" }
+                    { 1, "San Jose", "SJO" },
+                    { 2, "Tres Rios", "Cartago" },
+                    { 3, "La Fortuna", "Alajuela" }
                 });
 
             migrationBuilder.InsertData(
                 table: "Cars",
-                columns: new[] { "Id", "Make", "Model", "Vin" },
+                columns: new[] { "Id", "DealershipId", "Make", "Plate", "Year" },
                 values: new object[,]
                 {
-                    { 1, "Honda", "Fit", "ABC" },
-                    { 2, "Honda", "Civic", "ABC2" },
-                    { 3, "Honda", "Stream", "ABC1" },
-                    { 4, "Nissan", "Note", "ABC4" },
-                    { 5, "Nissan", "Atlas", "ABC5" },
-                    { 6, "Nissan", "Dualis", "ABC6" },
-                    { 7, "Nissan", "Murano", "ABC7" },
-                    { 8, "Audi", "A5", "ABC8" },
-                    { 9, "BMW", "M3", "ABC9" },
-                    { 10, "Jaguar", "F-Pace", "ABC10" }
-                });
-
-            migrationBuilder.InsertData(
-                table: "AspNetUserRoles",
-                columns: new[] { "RoleId", "UserId" },
-                values: new object[,]
-                {
-                    { "42358d3e-3c22-45e1-be81-6caa7ba865ef", "3f4631bd-f907-4409-b416-ba356312e659" },
-                    { "d1b5952a-2162-46c7-b29e-1a2a68922c14", "408aa945-3d84-4421-8342-7269ec64d949" }
+                    { 1, 1, "My Make", "PL4T3", 2023.0 },
+                    { 2, 1, "MC Laren", "F45T", 2015.0 },
+                    { 3, 2, "Bently", "B4D13", 2020.0 }
                 });
 
             migrationBuilder.CreateIndex(
@@ -253,6 +261,11 @@ namespace CarListApp.Api.Migrations
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Cars_DealershipId",
+                table: "Cars",
+                column: "DealershipId");
         }
 
         /// <inheritdoc />
@@ -281,6 +294,9 @@ namespace CarListApp.Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "Dealerships");
         }
     }
 }
