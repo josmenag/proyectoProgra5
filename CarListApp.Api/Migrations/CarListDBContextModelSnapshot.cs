@@ -213,13 +213,13 @@ namespace CarListApp.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "a78a1a55-f73e-424c-abc2-b9f1db518f94",
+                            Id = "f0f56742-b899-49c7-8a4d-de331c9fbe11",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "d3332a20-b4b2-4dd5-bb50-a4443cd36cb7",
+                            Id = "6e70afb6-de00-4bfd-bacc-0a6cf768a2c8",
                             Name = "User",
                             NormalizedName = "USER"
                         });
