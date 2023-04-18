@@ -10,14 +10,12 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Sqlite;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-// var connectionString = new SqliteConnection($"Data Source=C:\\hotellistdb\\hotellist.db");
 var connectionString = new SqliteConnection($"Data Source=carsInventory.db");
 
 builder.Services.AddDbContext<CarsInventoryDBContext>(o => o.UseSqlite(connectionString));
