@@ -1,6 +1,9 @@
 ﻿using System;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Data;
+using System.Diagnostics.Metrics;
 using CarListApp.Api.Contracts;
 using AutoMapper;
 using CarListApp.Api.Models.Dealership;
@@ -10,46 +13,46 @@ namespace CarListApp.Api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class DealershipsController : ControllerBase
+    public class dealershipsController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IDealershipsRepository _dealershipsRepository;
 
-        public DealershipsController(IMapper mapper, IDealershipsRepository dealershipsRepository)
+        public dealershipsController(IMapper mapper, IDealershipsRepository dealershipsRepository)
         {
             this._mapper = mapper;
             this._dealershipsRepository = dealershipsRepository;
         }
 
-        // GET: api/Dealerships
+        // GET: api/dealerships
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<GetDealershipDto>>> GetDealerships()
+        public async Task<ActionResult<IEnumerable<GetDealershipDto>>> Getdealerships()
         {
             var dealerships = await _dealershipsRepository.GetAllAsync();
             var records = _mapper.Map<List<GetDealershipDto>>(dealerships);
             return Ok(records);
         }
 
-        // GET: api/Dealerhips/5
+        // GET: api/dealerships/5
         [HttpGet("{id}")]
         public async Task<ActionResult<DealershipDto>> GetDealership(int id)
         {
-            var dealership = await _dealershipsRepository.GetDetails(id);
+            var Dealership = await _dealershipsRepository.GetDetails(id);
 
-            if (dealership == null)
+            if (Dealership == null)
             {
                 return NotFound();
             }
 
-            var dealershipDto = _mapper.Map<DealershipDto>(dealership);
+            var DealershipDto = _mapper.Map<DealershipDto>(Dealership);
 
-            return Ok(dealershipDto);
+            return Ok(DealershipDto);
         }
 
-        // PUT: api/Dealership/5
+        // PUT: api/dealerships/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        //[Authorize(Roles = "User")]
+        [Authorize]
         public async Task<IActionResult> PutDealership(int id, UpdateDealershipDto updateDealershipDto)
         {
             if (id != updateDealershipDto.Id)
@@ -57,18 +60,18 @@ namespace CarListApp.Api.Controllers
                 return BadRequest("Invalid Record Id");
             }
 
-            var dealership = await _dealershipsRepository.GetAsync(id);
+            var Dealership = await _dealershipsRepository.GetAsync(id);
 
-            if (dealership == null)
+            if (Dealership == null)
             {
                 return NotFound();
             }
 
-            _mapper.Map(updateDealershipDto, dealership);
+            _mapper.Map(updateDealershipDto, Dealership);
 
             try
             {
-                await _dealershipsRepository.UpdateAsync(dealership);
+                await _dealershipsRepository.UpdateAsync(Dealership);
             }
             catch (DbUpdateConcurrencyException)
             {
@@ -85,31 +88,33 @@ namespace CarListApp.Api.Controllers
             return NoContent();
         }
 
-        // POST: api/Dealership
+        // POST: api/dealerships
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        //[Authorize]
+        [Authorize]
         public async Task<ActionResult<Dealership>> PostDealership(CreateDealershipDto createDealershipDto)
         {
-            var dealership = _mapper.Map<Dealership>(createDealershipDto);
+            var Dealership = _mapper.Map<Dealership>(createDealershipDto);
 
-            await _dealershipsRepository.AddAsync(dealership);
+            await _dealershipsRepository.AddAsync(Dealership);
 
-            return CreatedAtAction("GetDealership", new { id = dealership.Id }, dealership);
+            return CreatedAtAction("GetDealership", new { id = Dealership.Id }, Dealership);
         }
 
-        // DELETE: api/Dealership/5
+        // DELETE: api/dealerships/5
         [HttpDelete("{id}")]
-        //[Authorize]
+        // [Authorize(Roles = "Administrator")]
+        [Authorize]
         public async Task<IActionResult> DeleteDealership(int id)
         {
-            var dealership = await _dealershipsRepository.GetAsync(id);
-            if (dealership == null)
+            var Dealership = await _dealershipsRepository.GetAsync(id);
+            if (Dealership == null)
             {
                 return NotFound();
             }
 
             await _dealershipsRepository.DeleteAsync(id);
+
             return NoContent();
         }
 

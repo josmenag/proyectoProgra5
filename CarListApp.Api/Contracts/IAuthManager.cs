@@ -1,6 +1,8 @@
 ﻿using System;
 using CarListApp.Api.Models.Users;
 using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+
 
 namespace CarListApp.Api.Contracts
 {
@@ -10,4 +12,3 @@ namespace CarListApp.Api.Contracts
         Task<AuthResponseDto> Login(LoginDto loginDto);
     }
 }
-

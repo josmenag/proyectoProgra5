@@ -1,15 +1,13 @@
 ﻿using System;
+using CarListApp.Api.Contracts;
+using CarListApp.Api.Data;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using AutoMapper;
-using CarListApp.Api.Contracts;
-using CarListApp.Api.Data;
 using CarListApp.Api.Models.Users;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-
-using CarListApp.Api.Data;
 
 namespace CarListApp.Api.Repository
 {
@@ -27,6 +25,7 @@ namespace CarListApp.Api.Repository
             this._userManager = userManager;
             this._configuration = configuration;
         }
+
 
         public async Task<AuthResponseDto> Login(LoginDto loginDto)
         {
@@ -92,4 +91,3 @@ namespace CarListApp.Api.Repository
         }
     }
 }
-

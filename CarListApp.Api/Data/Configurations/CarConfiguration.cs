@@ -9,31 +9,31 @@ namespace CarListApp.Api.Data.Configurations
         public void Configure(EntityTypeBuilder<Car> builder)
         {
             builder.HasData(
-                    new Car
-                    {
-                        Id = 1,
-                        Make = "BMW",
-                        Model = "5 series",
-                        DealershipId = 1,
-                        Vin = "F45T"
-                    },
-                    new Car
-                    {
-                        Id = 2,
-                        Make = "Mercedes-Benz",
-                        Model = "S-Class",
-                        DealershipId = 3,
-                        Vin = "K00L-13"
-                    },
-                    new Car
-                    {
-                        Id = 3,
-                        Make = "Lamborghini",
-                        Model = "Veneno",
-                        DealershipId = 2,
-                        Vin = "D14BL0"
-                    }
-                );
+                new Car
+                {
+                    Id = 1,
+                    Make = "Audi",
+                    Model = "e-tron GT",
+                    DealershipId = 1,
+                    Vin = 5133
+                },
+                new Car
+                {
+                    Id = 2,
+                    Make = "Lexus",
+                    Model = "LS",
+                    DealershipId = 1,
+                    Vin = 848
+                },
+                new Car
+                {
+                    Id = 3,
+                    Make = "Jaguar",
+                    Model = "I-Pace",
+                    DealershipId = 2,
+                    Vin = 2020
+                }
+            );
         }
     }
 }

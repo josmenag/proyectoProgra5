@@ -7,17 +7,16 @@ namespace CarListApp.Api.Repository
 {
     public class DealershipsRepository : GenericRepository<Dealership>, IDealershipsRepository
     {
-        private readonly CarsInventoryDBContext _context;
+        private readonly CarListDBContext _context;
 
-        public DealershipsRepository(CarsInventoryDBContext context) : base(context)
+        public DealershipsRepository(CarListDBContext context) : base(context)
         {
             this._context = context;
         }
 
         public async Task<Dealership> GetDetails(int id)
         {
-            return await _context.Dealerships.Include(q => q.Cars)
-                .FirstOrDefaultAsync(q => q.Id == id);
+            return await _context.Dealerships.Include(q => q.Cars).FirstOrDefaultAsync(q => q.Id == id);
         }
     }
 }

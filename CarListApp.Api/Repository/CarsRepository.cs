@@ -6,7 +6,7 @@ namespace CarListApp.Api.Repository
 {
     public class CarsRepository : GenericRepository<Car>, ICarsRepository
     {
-        public CarsRepository(CarsInventoryDBContext context) : base(context)
+        public CarsRepository(CarListDBContext contex) : base(contex)
         {
         }
     }

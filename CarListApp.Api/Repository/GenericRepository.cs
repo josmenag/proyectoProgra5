@@ -1,15 +1,15 @@
 ﻿using System;
 using CarListApp.Api.Contracts;
-using CarListApp.Api.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarListApp.Api.Repository
 {
+	
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private readonly CarsInventoryDBContext _context;
+        private readonly CarListDBContext _context;
 
-        public GenericRepository(CarsInventoryDBContext context)
+        public GenericRepository(CarListDBContext context)
         {
             this._context = context;
         }
@@ -21,7 +21,7 @@ namespace CarListApp.Api.Repository
             return entity;
         }
 
-        public async Task DeleteAsync(int? id)
+        public async Task DeleteAsync(int id)
         {
             var entity = await GetAsync(id);
             _context.Set<T>().Remove(entity);
@@ -45,8 +45,8 @@ namespace CarListApp.Api.Repository
             {
                 return null;
             }
-            return await _context.Set<T>().FindAsync(id);
 
+            return await _context.Set<T>().FindAsync(id);
         }
 
         public async Task UpdateAsync(T entity)
@@ -56,4 +56,5 @@ namespace CarListApp.Api.Repository
         }
     }
 }
+
 

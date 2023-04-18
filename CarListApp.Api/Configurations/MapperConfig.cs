@@ -1,10 +1,11 @@
 ﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Diagnostics.Metrics;
 using AutoMapper;
 using CarListApp.Api.Data;
-using CarListApp.Api.Models.Cars;
 using CarListApp.Api.Models.Dealership;
+using CarListApp.Api.Models.Car;
 using CarListApp.Api.Models.Users;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace CarListApp.Api.Configurations
 {
