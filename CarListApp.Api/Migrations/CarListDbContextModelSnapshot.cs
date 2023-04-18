@@ -2,24 +2,16 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
 
 namespace CarListApp.Api.Migrations
 {
-<<<<<<<< HEAD:CarListApp.Api/Migrations/20230418025615_firstMigration.Designer.cs
-    [DbContext(typeof(CarListDBContext))]
-    [Migration("20230418025615_firstMigration")]
-========
     [DbContext(typeof(CarListDbContext))]
-    [Migration("20230327195801_firstMigration")]
->>>>>>>> parent of d8c004e (api working):CarListApp.Api/Migrations/20230327195801_firstMigration.Designer.cs
-    partial class firstMigration
+    partial class CarListDbContextModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.4");
@@ -244,7 +236,7 @@ namespace CarListApp.Api.Migrations
                         .HasDatabaseName("UserNameIndex");
 
                     b.ToTable("AspNetUsers", (string)null);
-<<<<<<<< HEAD:CarListApp.Api/Migrations/20230418025615_firstMigration.Designer.cs
+<<<<<<< HEAD:CarListApp.Api/Migrations/CarListDBContextModelSnapshot.cs
                 });
 
             modelBuilder.Entity("CarListApp.Api.Data.Car", b =>
@@ -275,13 +267,13 @@ namespace CarListApp.Api.Migrations
                     b.HasIndex("DealershipId");
 
                     b.ToTable("Cars");
-========
->>>>>>>> parent of d8c004e (api working):CarListApp.Api/Migrations/20230327195801_firstMigration.Designer.cs
+=======
+>>>>>>> parent of d8c004e (api working):CarListApp.Api/Migrations/CarListDbContextModelSnapshot.cs
 
                     b.HasData(
                         new
                         {
-<<<<<<<< HEAD:CarListApp.Api/Migrations/20230418025615_firstMigration.Designer.cs
+<<<<<<< HEAD:CarListApp.Api/Migrations/CarListDBContextModelSnapshot.cs
                             Id = 1,
                             DealershipId = 1,
                             Make = "Audi",
@@ -410,7 +402,7 @@ namespace CarListApp.Api.Migrations
                     b.ToTable("AspNetRoleClaims", (string)null);
                 });
 
-========
+=======
                             Id = "408aa945-3d84-4421-8342-7269ec64d949",
                             AccessFailedCount = 0,
                             ConcurrencyStamp = "76447704-3502-42c9-9e25-2685646533e8",
@@ -443,7 +435,7 @@ namespace CarListApp.Api.Migrations
                         });
                 });
 
->>>>>>>> parent of d8c004e (api working):CarListApp.Api/Migrations/20230327195801_firstMigration.Designer.cs
+>>>>>>> parent of d8c004e (api working):CarListApp.Api/Migrations/CarListDbContextModelSnapshot.cs
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
                     b.Property<int>("Id")
