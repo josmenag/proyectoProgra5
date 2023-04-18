@@ -12,20 +12,20 @@ namespace CarListApp.Api.Data.Configurations
                     new Dealership
                     {
                         Id = 1,
-                        Name = "San Jose",
-                        Address = "Sabana Norte"
+                        Name = "Costa Rica",
+                        Address = "San Jose"
                     },
                     new Dealership
                     {
                         Id = 2,
-                        Name = "Heredia",
-                        Address = "Paseo de las Flores"
+                        Name = "Brasil",
+                        Address = "Sao Paulo"
                     },
                     new Dealership
                     {
                         Id = 3,
-                        Name = "Puntarenas",
-                        Address = "Jaco"
+                        Name = "Italy",
+                        Address = "Milan"
                     }
                 );
         }

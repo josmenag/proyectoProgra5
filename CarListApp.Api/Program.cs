@@ -1,22 +1,24 @@
-﻿using CarListApp.Api.Configurations;
+﻿using CarListApp.Api.Data;
+using Microsoft.EntityFrameworkCore;
+using CarListApp.Api.Configurations;
 using CarListApp.Api.Contracts;
-using CarListApp.Api.Data;
 using CarListApp.Api.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Serilog;
 using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Sqlite;
 
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var conn = new SqliteConnection($"Data Source=carlist.db");
-builder.Services.AddDbContext<CarsInventoryDBContext>(o => o.UseSqlite(conn));
+var connectionString = new SqliteConnection($"Data Source=C:\\hotellistdb\\hotellist.db");
+builder.Services.AddDbContext<CarsInventoryDBContext>(o => o.UseSqlite(connectionString));
 
 builder.Services.AddIdentityCore<ApiUser>()
     .AddRoles<IdentityRole>()
