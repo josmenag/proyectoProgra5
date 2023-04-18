@@ -181,8 +181,8 @@ namespace CarListApp.Api.Migrations
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Make = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
-                    Plate = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
-                    Year = table.Column<double>(type: "REAL", maxLength: 50, nullable: false),
+                    Model = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
+                    Vin = table.Column<double>(type: "REAL", maxLength: 50, nullable: false),
                     DealershipId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -201,8 +201,8 @@ namespace CarListApp.Api.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "c6b5be7c-a569-4316-8c57-5f7f4e30ef25", null, "User", "USER" },
-                    { "e8983e12-1b32-430d-8141-db29434b4b22", null, "Administrator", "ADMINISTRATOR" }
+                    { "a78a1a55-f73e-424c-abc2-b9f1db518f94", null, "Administrator", "ADMINISTRATOR" },
+                    { "d3332a20-b4b2-4dd5-bb50-a4443cd36cb7", null, "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -217,12 +217,12 @@ namespace CarListApp.Api.Migrations
 
             migrationBuilder.InsertData(
                 table: "Cars",
-                columns: new[] { "Id", "DealershipId", "Make", "Plate", "Year" },
+                columns: new[] { "Id", "DealershipId", "Make", "Model", "Vin" },
                 values: new object[,]
                 {
-                    { 1, 1, "My Make", "PL4T3", 2023.0 },
-                    { 2, 1, "MC Laren", "F45T", 2015.0 },
-                    { 3, 2, "Bently", "B4D13", 2020.0 }
+                    { 1, 1, "Audi", "e-tron GT", 5133.0 },
+                    { 2, 1, "Lexus", "LS", 848.0 },
+                    { 3, 2, "Jaguar", "I-Pace", 2020.0 }
                 });
 
             migrationBuilder.CreateIndex(

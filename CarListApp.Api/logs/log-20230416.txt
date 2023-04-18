@@ -74,7 +74,7 @@ System.InvalidOperationException: Cannot create a DbSet for 'ApiUser' because th
 2023-04-16 11:44:05.658 -06:00 [INF] Hosting environment: Development
 2023-04-16 11:44:05.659 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
 2023-04-16 11:49:56.572 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:49:56.597 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -154,7 +154,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2023-04-16 11:50:46.029 -06:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:50:46.030 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -239,7 +239,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 2023-04-16 11:54:44.689 -06:00 [INF] Hosting environment: Development
 2023-04-16 11:54:44.689 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
 2023-04-16 11:55:21.691 -06:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:55:21.714 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -324,7 +324,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
 2023-04-16 11:57:38.230 -06:00 [INF] Hosting environment: Development
 2023-04-16 11:57:38.230 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
 2023-04-16 11:58:39.185 -06:00 [ERR] Failed executing DbCommand (3ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 5), @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:58:39.207 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -404,7 +404,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2023-04-16 11:59:26.245 -06:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 5), @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:59:26.247 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -484,7 +484,7 @@ Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving 
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
 2023-04-16 11:59:43.946 -06:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (Size = 5), @p2='?' (Size = 4), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-INSERT INTO "Cars" ("DealershipId", "Make", "Plate", "Year")
+INSERT INTO "Cars" ("DealershipId", "Make", "Model", "Vin")
 VALUES (@p0, @p1, @p2, @p3)
 RETURNING "Id";
 2023-04-16 11:59:43.948 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.
@@ -679,7 +679,7 @@ Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such tab
 2023-04-16 21:05:31.908 -06:00 [INF] Hosting environment: Development
 2023-04-16 21:05:31.908 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
 2023-04-16 21:13:25.585 -06:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[@p4='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?' (Size = 12), @p2='?' (Size = 6), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
-UPDATE "Cars" SET "DealershipId" = @p0, "Make" = @p1, "Plate" = @p2, "Year" = @p3
+UPDATE "Cars" SET "DealershipId" = @p0, "Make" = @p1, "Model" = @p2, "Vin" = @p3
 WHERE "Id" = @p4
 RETURNING 1;
 2023-04-16 21:13:25.617 -06:00 [ERR] An exception occurred in the database while saving changes for context type 'CarListDBContext'.

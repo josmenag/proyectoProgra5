@@ -12,26 +12,26 @@ namespace CarListApp.Api.Data.Configurations
                 new Car
                 {
                     Id = 1,
-                    Make = "My Make",
-                    Plate = "PL4T3",
+                    Make = "Audi",
+                    Model = "e-tron GT",
                     DealershipId = 1,
-                    Year = 2023
+                    Vin = 5133
                 },
                 new Car
                 {
                     Id = 2,
-                    Make = "MC Laren",
-                    Plate = "F45T",
+                    Make = "Lexus",
+                    Model = "LS",
                     DealershipId = 1,
-                    Year = 2015
+                    Vin = 848
                 },
                 new Car
                 {
                     Id = 3,
-                    Make = "Bently",
-                    Plate = "B4D13",
+                    Make = "Jaguar",
+                    Model = "I-Pace",
                     DealershipId = 2,
-                    Year = 2020
+                    Vin = 2020
                 }
             );
         }

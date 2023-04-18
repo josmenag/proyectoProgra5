@@ -8,8 +8,8 @@ namespace CarListApp.Api.Data
     {
         public int Id { get; set; }
         public string Make { get; set; }
-        public string Plate { get; set; }
-        public double Year { get; set; }
+        public string Model { get; set; }
+        public double Vin { get; set; }
 
         [ForeignKey(nameof(DealershipId))]
         public int DealershipId { get; set; }

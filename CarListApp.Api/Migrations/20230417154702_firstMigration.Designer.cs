@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarListApp.Api.Migrations
 {
     [DbContext(typeof(CarListDBContext))]
-    [Migration("20230417030441_firstMigration")]
+    [Migration("20230417154702_firstMigration")]
     partial class firstMigration
     {
         /// <inheritdoc />
@@ -105,12 +105,12 @@ namespace CarListApp.Api.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Plate")
+                    b.Property<string>("Model")
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("TEXT");
 
-                    b.Property<double>("Year")
+                    b.Property<double>("Vin")
                         .HasMaxLength(50)
                         .HasColumnType("REAL");
 
@@ -125,25 +125,25 @@ namespace CarListApp.Api.Migrations
                         {
                             Id = 1,
                             DealershipId = 1,
-                            Make = "My Make",
-                            Plate = "PL4T3",
-                            Year = 2023.0
+                            Make = "Audi",
+                            Model = "e-tron GT",
+                            Vin = 5133.0
                         },
                         new
                         {
                             Id = 2,
                             DealershipId = 1,
-                            Make = "MC Laren",
-                            Plate = "F45T",
-                            Year = 2015.0
+                            Make = "Lexus",
+                            Model = "LS",
+                            Vin = 848.0
                         },
                         new
                         {
                             Id = 3,
                             DealershipId = 2,
-                            Make = "Bently",
-                            Plate = "B4D13",
-                            Year = 2020.0
+                            Make = "Jaguar",
+                            Model = "I-Pace",
+                            Vin = 2020.0
                         });
                 });
 
@@ -216,13 +216,13 @@ namespace CarListApp.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "e8983e12-1b32-430d-8141-db29434b4b22",
+                            Id = "a78a1a55-f73e-424c-abc2-b9f1db518f94",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "c6b5be7c-a569-4316-8c57-5f7f4e30ef25",
+                            Id = "d3332a20-b4b2-4dd5-bb50-a4443cd36cb7",
                             Name = "User",
                             NormalizedName = "USER"
                         });

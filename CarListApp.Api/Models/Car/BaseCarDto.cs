@@ -9,9 +9,9 @@ namespace CarListApp.Api.Models.Car
         public string Make { get; set; }
 
         [Required]
-        public string Plate { get; set; }
+        public string Model { get; set; }
 
-        public int Year { get; set; }
+        public int Vin { get; set; }
 
         [Required]
         [Range(1, int.MaxValue)]
