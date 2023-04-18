@@ -1,0 +1,159 @@
+2023-04-18 12:07:21.883 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-18 12:07:21.920 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-18 12:07:21.923 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-18 12:07:21.923 -06:00 [INF] Hosting environment: Development
+2023-04-18 12:07:21.923 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-18 12:07:33.987 -06:00 [INF] HTTP POST /api/Account/register responded 200 in 1711.7364 ms
+2023-04-18 12:07:37.889 -06:00 [INF] HTTP POST /api/Account/login responded 200 in 320.8821 ms
+2023-04-18 12:07:41.019 -06:00 [INF] HTTP GET /api/Cars responded 200 in 85.7348 ms
+2023-04-18 12:07:47.321 -06:00 [INF] HTTP POST /api/Cars responded 400 in 9.3632 ms
+2023-04-18 12:08:01.518 -06:00 [INF] HTTP GET /api/Cars/2 responded 200 in 20.8715 ms
+2023-04-18 12:08:08.458 -06:00 [INF] HTTP PUT /api/cars/1 responded 400 in 6.6751 ms
+2023-04-18 12:09:47.540 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 18.4481 ms
+2023-04-18 12:15:03.049 -06:00 [ERR] HTTP POST /api/Account/register responded 500 in 3.3997 ms
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-04-18 12:15:03.065 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-04-18 12:15:08.960 -06:00 [ERR] HTTP POST /api/Account/login responded 500 in 0.8621 ms
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method272(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-04-18 12:15:08.961 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method272(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-04-18 12:17:38.781 -06:00 [ERR] HTTP POST /api/Account/register responded 500 in 1.2189 ms
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2023-04-18 12:17:38.783 -06:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidProgramException: Vararg calling convention not supported.
+   at ResolveService(ILEmitResolverBuilderRuntimeContext, ServiceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ServiceProvider.GetService(Type serviceType, ServiceProviderEngineScope serviceProviderEngineScope)
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure, IServiceProvider, Object[])
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2023-04-18 12:21:12.187 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-18 12:21:12.223 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-18 12:21:12.224 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-18 12:21:12.225 -06:00 [INF] Hosting environment: Development
+2023-04-18 12:21:12.225 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-18 12:21:21.631 -06:00 [INF] HTTP POST /api/Account/register responded 200 in 1609.1882 ms
+2023-04-18 12:21:26.451 -06:00 [INF] HTTP POST /api/Account/login responded 200 in 270.5997 ms
+2023-04-18 12:21:29.195 -06:00 [INF] HTTP GET /api/Cars responded 200 in 88.7864 ms
+2023-04-18 12:21:36.970 -06:00 [INF] HTTP GET /api/Cars/2 responded 200 in 14.7990 ms
+2023-04-18 12:21:41.819 -06:00 [INF] HTTP GET /api/Cars/1 responded 200 in 4.8006 ms
+2023-04-18 12:21:45.955 -06:00 [INF] HTTP POST /api/Cars responded 400 in 9.0962 ms
+2023-04-18 12:21:57.125 -06:00 [INF] HTTP PUT /api/cars/1 responded 400 in 6.1260 ms
+2023-04-18 12:22:01.069 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 20.3721 ms
+2023-04-18 12:29:21.510 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-18 12:29:21.551 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-18 12:29:21.552 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-18 12:29:21.552 -06:00 [INF] Hosting environment: Development
+2023-04-18 12:29:21.552 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-18 12:29:33.099 -06:00 [INF] HTTP POST /api/Account/register responded 200 in 1713.4616 ms
+2023-04-18 12:29:36.813 -06:00 [INF] HTTP POST /api/Account/login responded 200 in 292.7937 ms
+2023-04-18 12:29:39.371 -06:00 [INF] HTTP GET /api/Cars responded 200 in 78.8475 ms
+2023-04-18 12:29:42.317 -06:00 [INF] HTTP GET /api/Cars/1 responded 200 in 14.5726 ms
+2023-04-18 12:29:44.587 -06:00 [INF] HTTP POST /api/Cars responded 400 in 11.5016 ms
+2023-04-18 12:29:53.950 -06:00 [INF] HTTP POST /api/Cars responded 400 in 1.9482 ms
+2023-04-18 12:31:27.432 -06:00 [INF] HTTP POST /api/Cars responded 201 in 75.3622 ms
+2023-04-18 12:31:31.995 -06:00 [INF] HTTP GET /api/Cars responded 200 in 2.0249 ms
+2023-04-18 12:31:48.761 -06:00 [INF] HTTP PUT /api/cars/1 responded 204 in 19.3350 ms
+2023-04-18 12:31:52.378 -06:00 [INF] HTTP GET /api/Cars responded 200 in 1.3819 ms
+2023-04-18 12:31:57.397 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 18.8999 ms
+2023-04-18 12:32:07.806 -06:00 [INF] HTTP GET /api/Dealerships/2 responded 200 in 73.9517 ms
+2023-04-18 12:32:35.408 -06:00 [INF] HTTP POST /api/Dealerships responded 201 in 17.0036 ms
+2023-04-18 12:32:39.789 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 1.4192 ms
+2023-04-18 12:33:08.852 -06:00 [INF] HTTP PUT /api/Dealerships/2 responded 204 in 12.5254 ms
+2023-04-18 12:33:12.011 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 1.3453 ms
+2023-04-18 12:33:19.302 -06:00 [INF] HTTP DELETE /api/Dealerships/3 responded 204 in 15.7847 ms
+2023-04-18 12:33:23.466 -06:00 [INF] HTTP GET /api/Dealerships responded 200 in 1.6630 ms
