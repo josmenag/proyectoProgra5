@@ -201,8 +201,8 @@ namespace CarListApp.Api.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "15d98bae-c3be-4ad4-9fb4-91f36c456890", null, "Administrator", "ADMINISTRATOR" },
-                    { "ca734c56-ef2a-4675-b455-b8d297608ff5", null, "User", "USER" }
+                    { "224ac222-8991-4de5-aac9-2e915103b958", null, "Administrator", "ADMINISTRATOR" },
+                    { "bfe33501-12b2-4b95-8bdf-4b679a4f4a65", null, "User", "USER" }
                 });
 
             migrationBuilder.InsertData(
@@ -210,9 +210,9 @@ namespace CarListApp.Api.Migrations
                 columns: new[] { "Id", "Address", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Sabana Norte", "San Jose" },
-                    { 2, "Paseo de las Flores", "Heredia" },
-                    { 3, "Jaco", "Puntarenas" }
+                    { 1, "San Jose", "Costa Rica" },
+                    { 2, "Sao Paulo", "Brasil" },
+                    { 3, "Milan", "Italy" }
                 });
 
             migrationBuilder.InsertData(
@@ -222,7 +222,7 @@ namespace CarListApp.Api.Migrations
                 {
                     { 1, 1, "BMW", "5 series", "F45T" },
                     { 2, 3, "Mercedes-Benz", "S-Class", "K00L-13" },
-                    { 3, 2, "Lamborghini", "Veneno", "D14BL0" }
+                    { 3, 2, "Lamborghini", "Veneno", "V123" }
                 });
 
             migrationBuilder.CreateIndex(

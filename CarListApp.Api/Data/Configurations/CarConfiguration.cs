@@ -31,7 +31,7 @@ namespace CarListApp.Api.Data.Configurations
                         Make = "Lamborghini",
                         Model = "Veneno",
                         DealershipId = 2,
-                        Vin = "D14BL0"
+                        Vin = "V123"
                     }
                 );
         }

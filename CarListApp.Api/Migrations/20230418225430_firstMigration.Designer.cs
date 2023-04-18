@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CarListApp.Api.Migrations
 {
     [DbContext(typeof(CarsInventoryDBContext))]
-    [Migration("20230418185033_firstMigration")]
+    [Migration("20230418225430_firstMigration")]
     partial class firstMigration
     {
         /// <inheritdoc />
@@ -145,7 +145,7 @@ namespace CarListApp.Api.Migrations
                             DealershipId = 2,
                             Make = "Lamborghini",
                             Model = "Veneno",
-                            Vin = "D14BL0"
+                            Vin = "V123"
                         });
                 });
 
@@ -173,20 +173,20 @@ namespace CarListApp.Api.Migrations
                         new
                         {
                             Id = 1,
-                            Address = "Sabana Norte",
-                            Name = "San Jose"
+                            Address = "San Jose",
+                            Name = "Costa Rica"
                         },
                         new
                         {
                             Id = 2,
-                            Address = "Paseo de las Flores",
-                            Name = "Heredia"
+                            Address = "Sao Paulo",
+                            Name = "Brasil"
                         },
                         new
                         {
                             Id = 3,
-                            Address = "Jaco",
-                            Name = "Puntarenas"
+                            Address = "Milan",
+                            Name = "Italy"
                         });
                 });
 
@@ -218,13 +218,13 @@ namespace CarListApp.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "15d98bae-c3be-4ad4-9fb4-91f36c456890",
+                            Id = "224ac222-8991-4de5-aac9-2e915103b958",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         },
                         new
                         {
-                            Id = "ca734c56-ef2a-4675-b455-b8d297608ff5",
+                            Id = "bfe33501-12b2-4b95-8bdf-4b679a4f4a65",
                             Name = "User",
                             NormalizedName = "USER"
                         });

@@ -22,3 +22,13 @@ System.BadImageFormatException: Bad IL range.
 2023-04-18 12:53:04.963 -06:00 [INF] Application started. Press Ctrl+C to shut down.
 2023-04-18 12:53:04.964 -06:00 [INF] Hosting environment: Development
 2023-04-18 12:53:04.964 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-18 16:12:35.042 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-18 16:12:35.080 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-18 16:12:35.081 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-18 16:12:35.081 -06:00 [INF] Hosting environment: Development
+2023-04-18 16:12:35.081 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
+2023-04-18 16:55:53.294 -06:00 [INF] Now listening on: https://localhost:7164
+2023-04-18 16:55:53.332 -06:00 [INF] Now listening on: http://localhost:5081
+2023-04-18 16:55:53.333 -06:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-04-18 16:55:53.334 -06:00 [INF] Hosting environment: Development
+2023-04-18 16:55:53.334 -06:00 [INF] Content root path: /Users/jose.mendez/Projects/Proyecto Programacion 5/CarListApp.Maui/CarListApp.Api
